@@ -2,6 +2,7 @@
 <html>
 
 <head>
+
 <title>Scrap2Cash</title>
 
 <style>
@@ -19,9 +20,23 @@ padding:20px;
 text-align:center;
 }
 
-section{
-padding:40px;
+nav{
+background:#333;
+padding:10px;
 text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-size:18px;
+}
+
+.hero{
+text-align:center;
+padding:60px;
+background:#e8f5e9;
 }
 
 button{
@@ -30,13 +45,29 @@ color:white;
 padding:12px 20px;
 border:none;
 font-size:18px;
+cursor:pointer;
+}
+
+section{
+padding:40px;
+text-align:center;
+}
+
+table{
+margin:auto;
+border-collapse:collapse;
+}
+
+table, th, td{
+border:1px solid black;
+padding:10px;
 }
 
 footer{
 background:#333;
 color:white;
 text-align:center;
-padding:10px;
+padding:15px;
 }
 
 </style>
@@ -49,22 +80,104 @@ padding:10px;
 
 <h1>Scrap2Cash</h1>
 
-<p>Turn Waste Solar Products & Junk Iron Into Money</p>
+<p>Turn Waste Solar Products & Scrap Metal Into Money</p>
 
 </header>
 
-<section>
+<nav>
 
-<h2>Sell Your Scrap</h2>
-  <a href="https://wa.me/917639962676" target="_blank">
+<a href="#">Home</a>
+<a href="#">Prices</a>
+<a href="#">Sell Scrap</a>
+<a href="#">Contact</a>
+
+</nav>
+
+<div class="hero">
+
+<h2>Sell Your Scrap & Get Paid</h2>
+
+<p>We buy scrap iron, solar panels, copper, and aluminum</p>
+
+<a href="https://wa.me/91YOURNUMBER" target="_blank">
+
 <button>Contact on WhatsApp</button>
+
 </a>
 
-<p>We buy scrap iron, solar panels, copper and aluminum.</p>
+</div>
 
-<button onclick="alert('Call us to sell scrap')">
-Sell Scrap
-</button>
+<section>
+
+<h2>How It Works</h2>
+
+<p>1️⃣ Submit scrap request</p>
+<p>2️⃣ We schedule pickup</p>
+<p>3️⃣ Get paid instantly</p>
+
+</section>
+
+<section>
+
+<h2>Scrap Price List</h2>
+
+<table>
+
+<tr>
+<th>Material</th>
+<th>Price</th>
+</tr>
+
+<tr>
+<td>Scrap Iron</td>
+<td>₹30/kg</td>
+</tr>
+
+<tr>
+<td>Copper</td>
+<td>₹750/kg</td>
+</tr>
+
+<tr>
+<td>Aluminum</td>
+<td>₹150/kg</td>
+</tr>
+
+<tr>
+<td>Solar Panels</td>
+<td>₹20/kg</td>
+</tr>
+
+</table>
+
+</section>
+
+<section>
+
+<h2>Request Scrap Pickup</h2>
+
+<form>
+
+<input placeholder="Your Name"><br><br>
+
+<input placeholder="Phone Number"><br><br>
+
+<select>
+
+<option>Scrap Iron</option>
+<option>Solar Panels</option>
+<option>Copper</option>
+<option>Aluminum</option>
+
+</select><br><br>
+
+<input placeholder="Estimated Weight (kg)"><br><br>
+
+<textarea placeholder="Address"></textarea><br><br>
+
+<button type="submit">Submit</button>
+
+</form>
 
 </section>
 
