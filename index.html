@@ -192,48 +192,38 @@ padding:15px;
 
 <p>© Scrap2Cash Recycling</p>
 
+  <h2>Our Location</h2>
+
+<iframe
+src="https://www.google.com/maps?q=Chennai&output=embed"
+width="400"
+height="300">
+</iframe>
+
 </footer>
 
 <script>
-
-const prices={
-"Scrap Iron":30,
-"Copper":750,
-"Aluminum":150,
-"Solar Panels":20
-}
-
-document.getElementById("weight").addEventListener("input",function(){
-
-let material=document.getElementById("material").value
-let weight=this.value
-
-let total=prices[material]*weight
-
-document.getElementById("payment").innerText=
-"Estimated Payment: ₹"+total
-
-})
 
 document.getElementById("scrapForm").addEventListener("submit",function(e){
 
 e.preventDefault()
 
-let data={
-name:document.getElementById("name").value,
-phone:document.getElementById("phone").value,
-material:document.getElementById("material").value,
-weight:document.getElementById("weight").value,
-address:document.getElementById("address").value
-}
+let name=document.getElementById("name").value
+let phone=document.getElementById("phone").value
+let material=document.getElementById("material").value
+let weight=document.getElementById("weight").value
+let address=document.getElementById("address").value
 
-let requests=JSON.parse(localStorage.getItem("scrapRequests"))||[]
+let message=`Scrap Pickup Request
+Name: ${name}
+Phone: ${phone}
+Material: ${material}
+Weight: ${weight}
+Address: ${address}`
 
-requests.push(data)
+let url=`https://wa.me/917639962676?text=${encodeURIComponent(message)}`
 
-localStorage.setItem("scrapRequests",JSON.stringify(requests))
-
-alert("Request submitted! We will contact you.")
+window.open(url)
 
 })
 
