@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Admin Panel</title>
+</head>
+
+<body>
+
+<h1>Pickup Requests</h1>
+
+<div id="requests"></div>
+
+<script>
+
+let data = JSON.parse(localStorage.getItem("scrapRequests")) || []
+
+let html=""
+
+data.forEach(r=>{
+
+html+=`
+<p>
+Name: ${r.name}<br>
+Phone: ${r.phone}<br>
+Material: ${r.material}<br>
+Weight: ${r.weight}<br>
+Address: ${r.address}
+</p>
+<hr>
+`
+
+})
+
+document.getElementById("requests").innerHTML=html
+
+</script>
+
+</body>
+</html>
