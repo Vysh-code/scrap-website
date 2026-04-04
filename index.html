@@ -95,11 +95,11 @@ let isScrap = true;
 
 function convertToCash() {
     if (isScrap) {
-        document.getElementById("gameImage").src = "cash.png";
+        document.getElementById("gameImage").src = "cash.jpeg";
         document.getElementById("message").innerText = "💰 You earned money!";
         isScrap = false;
     } else {
-        document.getElementById("gameImage").src = "scrap.png";
+        document.getElementById("gameImage").src = "scrap.jpeg";
         document.getElementById("message").innerText = "♻️ Back to scrap!";
         isScrap = true;
     }
