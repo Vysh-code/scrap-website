@@ -34,6 +34,8 @@
             padding: 50px;
             background: #a5d6a7;
         }
+
+        
         .hero h1 {
             font-size: 40px;
         }
@@ -76,6 +78,24 @@
     <h1 style="margin:20px 0 15px;">SPLGAINMONEY</h1>
     <p>Turn Your Scrap into Cash 💰</p>
 </header>
+
+    <div style="text-align:center; padding:40px;">
+    <h2>Play & Earn 💰</h2>
+    <p>Click the scrap to turn it into money!</p>
+
+    <img id="gameImage" src="scrap.png" 
+    style="width:150px; cursor:pointer;" 
+    onclick="convertToCash()">
+
+    <p id="message" style="font-weight:bold; margin-top:15px;"></p>
+</div>
+
+<script>
+function convertToCash() {
+    document.getElementById("gameImage").src = "cash.png";
+    document.getElementById("message").innerText = "🎉 You earned money from scrap!";
+}
+</script>
 
 <nav>
     <a href="#home">Home</a>
