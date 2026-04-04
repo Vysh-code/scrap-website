@@ -91,9 +91,18 @@
 </div>
 
 <script>
+let isScrap = true;
+
 function convertToCash() {
-    document.getElementById("gameImage").src = "cash.png";
-    document.getElementById("message").innerText = "🎉 You earned money from scrap!";
+    if (isScrap) {
+        document.getElementById("gameImage").src = "cash.png";
+        document.getElementById("message").innerText = "💰 You earned money!";
+        isScrap = false;
+    } else {
+        document.getElementById("gameImage").src = "scrap.png";
+        document.getElementById("message").innerText = "♻️ Back to scrap!";
+        isScrap = true;
+    }
 }
 </script>
 
