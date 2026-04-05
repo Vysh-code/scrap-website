@@ -12,6 +12,21 @@ body {
     background: #f4f9f4;
 }
 
+/* LOADER */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #2e7d32;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    z-index: 9999;
+}
+
+/* HEADER */
 header {
     background: #2e7d32;
     color: white;
@@ -41,18 +56,12 @@ nav a:hover {
     background: #a5d6a7;
 }
 
-.hero h1 {
-    font-size: 40px;
-}
-
 .btn {
     background: #2e7d32;
     color: white;
     padding: 12px 20px;
-    border: none;
-    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
+    text-decoration: none;
 }
 
 .section {
@@ -78,15 +87,14 @@ nav a:hover {
 footer {
     background: #1b5e20;
     color: white;
-    text-align: center;
     padding: 15px;
+    text-align: center;
 }
 
 /* GAME */
 .game-img {
     width:150px;
-    cursor:pointer;
-    transition: transform 0.4s, opacity 0.4s;
+    transition: 0.4s;
 }
 
 .animate {
@@ -97,184 +105,222 @@ footer {
 .money {
     position: absolute;
     font-size: 24px;
-    animation: fly 1s ease-out forwards;
+    animation: fly 1s forwards;
 }
 
 @keyframes fly {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-100px); opacity: 0; }
+    from { transform: translateY(0); }
+    to { transform: translateY(-100px); opacity: 0; }
+}
+
+/* TABLE */
+table {
+    margin: auto;
+    width: 60%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #2e7d32;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+/* REVIEWS */
+.review {
+    background: white;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+/* FLOAT WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 /* FORM */
 input, textarea, select {
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- LOADER -->
+<div id="loader">Loading SPLGAINMONEY...</div>
+
 <header>
-    <img src="LOGO.jpeg" style="width:300px; display:block; margin:auto;">
+    <img src="LOGO.jpeg" style="width:300px;">
     <h1>SPLGAINMONEY</h1>
     <p>Turn Your Scrap into Cash 💰</p>
 </header>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#booking">Book</a>
-    <a href="#contact">Contact</a>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#booking">Book</a>
+<a href="#contact">Contact</a>
 </nav>
 
 <section class="hero" id="home">
-    <h1>Sell Your Scrap & Earn Money</h1>
-    <p>We collect scrap from your doorstep and pay instantly</p>
-    <a href="#booking" class="btn">Book Pickup</a>
+<h1>Sell Your Scrap & Earn Money</h1>
+<p>We collect scrap and pay instantly</p>
+<a href="#booking" class="btn">Book Pickup</a>
 </section>
 
 <!-- GAME -->
 <div style="text-align:center; padding:40px;">
-    <h2>Play & Earn 💰</h2>
-    <p>Watch the magic automatically!</p>
-
-    <img id="gameImage" src="scrap.jpeg" class="game-img">
-
-    <p id="message" style="font-weight:bold; margin-top:15px;"></p>
+<h2>Watch Scrap Turn Into Cash 💰</h2>
+<img id="gameImage" src="scrap.jpeg" class="game-img">
+<p id="message"></p>
 </div>
 
+<!-- SERVICES -->
 <section class="section" id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-       
-    </div>
+<h2>Our Services</h2>
+<div class="services">
+<div class="card">📄 Paper</div>
+<div class="card">🧴 Plastic</div>
+<div class="card">🔩 Metal</div>
+<div class="card">💻 E-Waste</div>
+</div>
 
-    <h2>Scrap Price List</h2>
-    <table>
-        <tr><th>Material</th><th>Price/kg</th></tr>
-        <tr><td>Scrap Iron</td><td>₹30</td></tr>
-        <tr><td>Copper</td><td>₹750</td></tr>
-        <tr><td>Aluminum</td><td>₹150</td></tr>
-        <tr><td>Solar Panels</td><td>₹20</td></tr>
-    </table>
+<h2>Scrap Price List</h2>
+<table>
+<tr><th>Material</th><th>Price/kg</th></tr>
+<tr><td>🔩 Iron</td><td>₹30</td></tr>
+<tr><td>🥇 Copper</td><td>₹750</td></tr>
+<tr><td>⚙️ Aluminum</td><td>₹150</td></tr>
+<tr><td>☀️ Solar</td><td>₹20</td></tr>
+</table>
 </section>
 
-<!-- BOOKING FORM -->
+<!-- REVIEWS -->
+<section class="section">
+<h2>Customer Reviews ⭐</h2>
+<div class="services">
+<div class="review">"Very fast service!" ⭐⭐⭐⭐⭐</div>
+<div class="review">"Good price for scrap" ⭐⭐⭐⭐</div>
+<div class="review">"Easy pickup process" ⭐⭐⭐⭐⭐</div>
+</div>
+</section>
+
+<!-- FORM -->
 <section class="section" id="booking">
-    <h2>Book Scrap Pickup</h2>
+<h2>Book Pickup</h2>
 
-    <form onsubmit="submitForm(event)" style="max-width:400px; margin:auto; text-align:left;">
-        
-        <label>Name:</label><br>
-        <input type="text" id="name" required style="width:100%; padding:8px;"><br><br>
-
-        <label>Phone:</label><br>
-        <input type="tel" id="phone" required style="width:100%; padding:8px;"><br><br>
-
-        <label>Address:</label><br>
-        <textarea id="address" required style="width:100%; padding:8px;"></textarea><br><br>
-
-        <label>Scrap Type:</label><br>
-        <select id="scrap" style="width:100%; padding:8px;">
-            <option>Paper</option>
-            <option>Plastic</option>
-            <option>Metal</option>
-            <option>E-Waste</option>
-        </select><br><br>
-
-        <button type="submit" class="btn">Submit Request</button>
-    </form>
+<form onsubmit="submitForm(event)" style="max-width:400px; margin:auto;">
+<input type="text" id="name" placeholder="Name" required>
+<input type="tel" id="phone" placeholder="Phone" required>
+<textarea id="address" placeholder="Address" required></textarea>
+<select id="scrap">
+<option>Paper</option>
+<option>Plastic</option>
+<option>Metal</option>
+<option>E-Waste</option>
+</select>
+<br><br>
+<button class="btn">Submit</button>
+</form>
 </section>
 
 <section class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>📞 Phone: 7639962676</p>
-    <p>📍 Location: Kolapakkam, Chennai</p>
+<h2>Contact</h2>
+<p>📞 9876543210</p>
+<p>📍 Chennai</p>
 </section>
 
 <footer>
-    <p>© 2026 SPLGAINMONEY</p>
+© 2026 SPLGAINMONEY
 </footer>
+
+<!-- FLOAT BUTTON -->
+<a href="https://wa.me/919876543210" class="whatsapp">💬</a>
 
 <!-- SOUND -->
 <audio id="coinSound">
-    <source src="https://www.soundjay.com/misc/sounds/coin-drop-1.mp3">
+<source src="https://www.soundjay.com/misc/sounds/coin-drop-1.mp3">
 </audio>
 
-<!-- SCRIPT -->
 <script>
-let isScrap = true;
+// LOADER
+window.onload = function() {
+document.getElementById("loader").style.display = "none";
 
-function convertToCash() {
-    let img = document.getElementById("gameImage");
-    let msg = document.getElementById("message");
-    let sound = document.getElementById("coinSound");
-
-    img.classList.add("animate");
-
-    setTimeout(() => {
-        if (isScrap) {
-            img.src = "cash.jpeg";
-            msg.innerText = "💰 Scrap converted to cash!";
-            sound.play();
-            createMoneyEffect();
-        } else {
-            img.src = "scrap.jpeg";
-            msg.innerText = "♻️ Back to scrap!";
-        }
-
-        isScrap = !isScrap;
-        img.classList.remove("animate");
-    }, 200);
-}
-
-function createMoneyEffect() {
-    let money = document.createElement("div");
-    money.innerText = "💸";
-    money.className = "money";
-
-    money.style.left = (window.innerWidth/2 - 20) + "px";
-    money.style.top = (window.innerHeight/2) + "px";
-
-    document.body.appendChild(money);
-
-    setTimeout(() => {
-        money.remove();
-    }, 1000);
-}
-
-// AUTO ANIMATION 2 TIMES
-window.onload = function () {
-    let count = 0;
-
-    let interval = setInterval(() => {
-        convertToCash();
-        count++;
-
-        if (count === 2) {
-            clearInterval(interval);
-        }
-    }, 1000);
+let count = 0;
+let interval = setInterval(() => {
+convertToCash();
+count++;
+if(count==2) clearInterval(interval);
+},1000);
 };
 
-function submitForm(event) {
-    event.preventDefault();
+// GAME
+let isScrap = true;
 
-    let name = document.getElementById("name").value;
-    let phone = document.getElementById("phone").value;
-    let address = document.getElementById("address").value;
-    let scrap = document.getElementById("scrap").value;
+function convertToCash(){
+let img = document.getElementById("gameImage");
+let sound = document.getElementById("coinSound");
 
-    let message = "🧾 *New Scrap Pickup Request* %0A%0A" +
-                  "👤 Name: " + name + "%0A" +
-                  "📞 Phone: " + phone + "%0A" +
-                  "📍 Address: " + address + "%0A" +
-                  "♻️ Scrap Type: " + scrap;
+img.classList.add("animate");
 
-    let whatsappURL = "https://wa.me/917639962676?text=" + message;
+setTimeout(()=>{
+if(isScrap){
+img.src="cash.jpeg";
+sound.play();
+createMoney();
+}else{
+img.src="scrap.jpeg";
+}
+isScrap=!isScrap;
+img.classList.remove("animate");
+},200);
+}
 
-    window.open(whatsappURL, "_blank");
+function createMoney(){
+let m=document.createElement("div");
+m.innerText="💸";
+m.className="money";
+m.style.left="50%";
+m.style.top="50%";
+document.body.appendChild(m);
+setTimeout(()=>m.remove(),1000);
+}
+
+// WHATSAPP FORM
+function submitForm(e){
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let address=document.getElementById("address").value;
+let scrap=document.getElementById("scrap").value;
+
+let msg=`New Pickup Request%0AName:${name}%0APhone:${phone}%0AAddress:${address}%0AScrap:${scrap}`;
+
+window.open("https://wa.me/919876543210?text="+msg);
 }
 </script>
 
