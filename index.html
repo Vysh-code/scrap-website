@@ -129,9 +129,7 @@ footer {
 <!-- 🎮 GAME SECTION -->
 <div style="text-align:center; padding:40px;">
     <h2>Play & Earn 💰</h2>
-    <p>Click the scrap to earn money!</p>
-
-    <h3>💰 Earnings: ₹<span id="score">0</span></h3>
+    <p>Click the scrap to see magic!</p>
 
     <img id="gameImage" src="scrap.jpeg" class="game-img" onclick="convertToCash()">
 
@@ -167,8 +165,9 @@ footer {
 
 <section class="section" id="contact">
     <h2>Contact Us</h2>
-    <p>📞 Phone: 7639962676</p>
-    <p>📍 Location: kolapakkam, Chennai</p>
+    <p>📞 Phone: 9876543210</p>
+    <p>📍 Location: Ambattur, Chennai</p>
+    <p>💬 WhatsApp: Available</p>
 </section>
 
 <footer>
@@ -183,7 +182,6 @@ footer {
 <!-- ⚙️ SCRIPT -->
 <script>
 let isScrap = true;
-let score = 0;
 
 function convertToCash() {
     let img = document.getElementById("gameImage");
@@ -195,18 +193,15 @@ function convertToCash() {
     setTimeout(() => {
         if (isScrap) {
             img.src = "cash.jpeg";
-            score += 10;
-            msg.innerText = "💰 +₹10 earned!";
+            msg.innerText = "💰 Scrap converted to cash!";
             sound.play();
             createMoneyEffect();
         } else {
             img.src = "scrap.jpeg";
-            msg.innerText = "♻️ Scrap ready again!";
+            msg.innerText = "♻️ Back to scrap!";
         }
 
-        document.getElementById("score").innerText = score;
         isScrap = !isScrap;
-
         img.classList.remove("animate");
     }, 200);
 }
